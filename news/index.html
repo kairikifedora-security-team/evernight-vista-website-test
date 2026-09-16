@@ -279,7 +279,7 @@
 
       <div class="versions">
         <!-- 动态跳转链接：根据当前语言自动指向对应更新日记 HTML -->
-        <a href="releasenotes-44-0-1-en.html" class="ver-link" id="versionLink">
+        <a href="44-0-1-released-en.html" class="ver-link" id="versionLink">
           <span>Evernight Vista</span>
           <span class="ver-num">44.0.1</span>
           <span class="arrow">
@@ -338,10 +338,10 @@
       // 根据语言返回对应的更新日记页面路径
       function getReleaseNotesPath(lang) {
         if (lang === 'zh') {
-          return 'releasenotes-44-0-1-zh-cn.html';
+          return '44-0-1-released-zh-cn.html';
         } else {
           // en 或 ja（无日文版，回退英文）
-          return 'releasenotes-44-0-1-en.html';
+          return '44-0-1-released-en.html';
         }
       }
 
