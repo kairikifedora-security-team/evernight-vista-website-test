@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Evernight Vista 44.0.1 Release Notes</title>
+  <link rel="icon" type="image/png" href="https://gh-proxy.org/https://github.com/EvernightFedora/evernight-vista/blob/main/system-logo-white.png" />
+  <style>
+    @import url('https://cdn.jsdelivr.net/npm/misans@4.0.0/lib/Normal/MiSans-Normal.min.css');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "MiSans", "Inter", "PingFang SC", "Noto Sans JP", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+      background: #080b12;
+      color: #e8edf5;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 820px;
+      width: 100%;
+      background: #0f131e;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 22px;
+      padding: 48px 44px 52px;
+      box-shadow: 0 0 60px rgba(123, 159, 255, 0.25), 0 12px 40px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      position: relative;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 90px;
+      background: radial-gradient(ellipse, rgba(123, 159, 255, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .logo-bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 20px;
+    }
+
+    .logo-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      object-fit: contain;
+      background: rgba(18, 24, 42, 0.7);
+      padding: 4px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: -0.01em;
+    }
+
+    .back-link {
+      margin-left: auto;
+      color: #9aa4bf;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 6px 16px;
+      border-radius: 40px;
+      transition: all 0.28s;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .back-link:hover {
+      background: rgba(123, 159, 255, 0.14);
+      border-color: rgba(123, 159, 255, 0.4);
+      color: #dfe6ff;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      margin: 0 0 8px 0;
+      letter-spacing: -0.01em;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #d0d8f0;
+      margin: 32px 0 16px 0;
+      border-left: 4px solid #7b9fff;
+      padding-left: 16px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #b8ccff;
+      margin: 26px 0 12px 0;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #d8e0f0;
+      margin: 0 0 14px 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+    }
+
+    ul li {
+      padding: 6px 0 6px 24px;
+      position: relative;
+      line-height: 1.6;
+      color: #d8e0f0;
+    }
+
+    ul li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #7b9fff;
+      font-weight: 600;
+    }
+
+    .release-img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin: 12px 0 20px 0;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .img-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 12px 0 20px 0;
+    }
+
+    .img-row .release-img {
+      flex: 1 1 200px;
+      margin: 0;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin: 30px 0 10px 0;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #9aa4bf;
+      opacity: 0.6;
+      margin-top: 30px;
+      letter-spacing: 0.03em;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 28px 18px 32px;
+      }
+      .logo-text {
+        font-size: 1.2rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      h2 {
+        font-size: 1.25rem;
+      }
+      .back-link {
+        font-size: 0.75rem;
+        padding: 4px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- 顶部：Logo + 返回首页 -->
+    <div class="logo-bar">
+      <img src="https://gh-proxy.org/https://github.com/EvernightFedora/evernight-vista/blob/main/system-logo-white.png" alt="Evernight Vista Logo" class="logo-img" />
+      <span class="logo-text">Evernight Vista</span>
+      <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+
+    <!-- 主内容 -->
+    <h1>Evernight Vista 44.0.1 Released:Enhance your experience!</h1>
+
+    <h3>Release Date</h3>
+    <p>July 29th,2026<p>
+
+    <h3>Introduction</h3>
+    <p>Evernight Vista is based on the Fedora distribution and is a Fedora-based distribution that allows beginner users to get started easily with zero barriers. It is committed to providing a smooth and fast user experience. This is the summer update summary, bringing hardware support, new features, and bug fixes.</p>
+
+    <h3>WSL Platform</h3>
+    <p>Supports using Evernight Vista on Windows 10 version 2004 or later and Windows 11 operating systems (requires Windows Subsystem for Linux to be installed, and it must be WSL2)</p>
+    <img class="release-img" src="https://raw.githubusercontent.com/EvernightFedora/evernight-vista-release-notes/refs/heads/main/WSL.png" alt="WSL" />
+
+    <h3>Hardware Support</h3>
+    <p><strong>Joystick:</strong> Now supports the Beitong Kunpeng 70 NTE Edition Controller (BTP-KP70C), thanks to VegetablCat on GitHub for providing the patch source code</p>
+    <img class="release-img" src="https://raw.githubusercontent.com/EvernightFedora/evernight-vista-release-notes/refs/heads/main/joysticksupport.png" alt="Joystick Support" />
+    <p><strong>Keyboard:</strong> Fixed the issue where the keyboard of Xiaomi Book Pro 14 2026 model does not work without adding any kernel parameters</p>
+
+    <h3>New UI &amp; New Features</h3>
+    <p>By default, use the Darkly appearance engine, making the interface of konsole and dolphin file manager blur and transparent by default</p>
+    <img class="release-img" src="https://raw.githubusercontent.com/EvernightFedora/evernight-vista-release-notes/refs/heads/main/newui.png" alt="New UI" />
+
+    <p>Taskbar floating returns and taskbar style updated</p>
+    <p>GRUB2 Boot Interface Update</p>
+    <img class="release-img" src="https://raw.githubusercontent.com/EvernightFedora/evernight-vista-release-notes/refs/heads/main/grubui.png" alt="GRUB UI" />
+
+    <p>The input method skin is designed using SVG, compatible with high resolution and HIDPI technology</p>
+    <div class="img-row">
+      <img class="release-img" src="https://raw.githubusercontent.com/EvernightFedora/evernight-vista-release-notes/refs/heads/main/light-input.png" alt="Light Input" />
+      <img class="release-img" src="https://raw.githubusercontent.com/EvernightFedora/evernight-vista-release-notes/refs/heads/main/dark-input.png" alt="Dark Input" />
+    </div>
+
+    <p>Add One key Install Practical tool</p>
+    <p>The Linyaps App Store has officially upgraded to the community version, supporting multiple languages</p>
+    <p>Added DNF5 graphical installation, allowing easy one-click installation, updating, and removal of RPM packages</p>
+    <img class="release-img" src="https://raw.githubusercontent.com/EvernightFedora/evernight-vista-release-notes/refs/heads/main/dnf5gui.png" alt="DNF5 GUI" />
+
+    <p>System accent color update</p>
+    <img class="release-img" src="https://raw.githubusercontent.com/EvernightFedora/evernight-vista-release-notes/refs/heads/main/Color.png" alt="Accent Color" />
+
+    <p>Added practical CLI commands, such as the one-click update command 'update', so there is no need to enter the complex dnf5 command line anymore.</p>
+    <p>Added terminal font symbol support for certain distributions.</p>
+    <p>Significant improvements to boot animation and cursor.</p>
+    <p>The Klassy settings entry is restored and the UI has been translated.</p>
+
+    <h3>Features Enhanced &amp; BUG Fixes</h3>
+    <ul>
+      <li>Fsearch updated to version 0.3 stable; the home and mnt directories are automatically indexed on first launch.</li>
+      <li>Linyaps Store does not require password verification when installing, uninstalling, and updating Linyaps software.</li>
+      <li>Fixed the issue during the OOBE stage where a laptop could not continue setting up the operating system after being closed and then awakened.</li>
+      <li>Fixed the inconsistency between Dolphin in the root environment and the default Evernight Vista appearance.</li>
+      <li>Removed the scx-sched component due to performance issues with scx-sched.</li>
+      <li>Secure boot policy updated.</li>
+      <li>By default, use mksquashfs to package installation files.</li>
+    </ul>
+
+    <hr />
+    <!-- 修复翻译：链接文字改为纯英文 -->
+    <p style="text-align:center; color:#9aa4bf; font-size:0.9rem;">
+      📄 <a href="releasenotes-zh-cn.html" style="color:#7b9fff; text-decoration:none;">Chinese version available (releasenotes-zh-cn.html)</a>
+    </p>
+    <div class="footer-note">Evernight Vista · 44.0.1 Release Notes</div>
+  </div>
+</body>
+</html>
