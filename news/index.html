@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Evernight Vista · 发行注记</title>
+  <title>Evernight Vista · 更新日记</title>
   <link rel="icon" type="image/png" href="https://gh-proxy.org/https://github.com/EvernightFedora/evernight-vista/blob/main/system-logo-white.png">
   <!-- 引入 MiSans 字体 -->
   <style>
@@ -274,12 +274,12 @@
         <img src="https://gh-proxy.org/https://github.com/EvernightFedora/evernight-vista/blob/main/system-logo-white.png" alt="Evernight Vista Logo" class="logo-img">
       </div>
 
-      <h1 data-i18n="title">Evernight Vista 发行注记</h1>
-      <p class="sub" data-i18n="subtitle">Release Notes</p>
+      <h1 data-i18n="title">Evernight Vista 更新日记</h1>
+      <p class="sub" data-i18n="subtitle">Update Diary</p>
 
       <div class="versions">
-        <!-- 动态跳转链接：根据当前语言自动指向对应发行注记 HTML -->
-        <a href="releasenotes-en.html" class="ver-link" id="versionLink">
+        <!-- 动态跳转链接：根据当前语言自动指向对应更新日记 HTML -->
+        <a href="releasenotes-44-0-1-en.html" class="ver-link" id="versionLink">
           <span>Evernight Vista</span>
           <span class="ver-num">44.0.1</span>
           <span class="arrow">
@@ -319,29 +319,29 @@
       // ---------- 多语言数据 ----------
       const translations = {
         zh: {
-          title: 'Evernight Vista 发行注记',
-          subtitle: 'Release Notes',
+          title: 'Evernight Vista 更新日记',
+          subtitle: 'Update Diary',
           footer: '选择版本以查看详细更新内容'
         },
         en: {
-          title: 'Evernight Vista Release Notes',
-          subtitle: 'Release Notes',
+          title: 'Evernight Vista Update Diary',
+          subtitle: 'Update Diary',
           footer: 'Select a version to view detailed update notes'
         },
         ja: {
-          title: 'Evernight Vista リリースノート',
-          subtitle: 'リリースノート',
+          title: 'Evernight Vista アップデートダイアリー',
+          subtitle: 'アップデートダイアリー',
           footer: 'バージョンを選択して詳細な更新内容をご確認ください'
         }
       };
 
-      // 根据语言返回对应的发行注记页面路径
+      // 根据语言返回对应的更新日记页面路径
       function getReleaseNotesPath(lang) {
         if (lang === 'zh') {
-          return 'releasenotes-zh-cn.html';
+          return 'releasenotes-44-0-1-zh-cn.html';
         } else {
           // en 或 ja（无日文版，回退英文）
-          return 'releasenotes-en.html';
+          return 'releasenotes-44-0-1-en.html';
         }
       }
 
